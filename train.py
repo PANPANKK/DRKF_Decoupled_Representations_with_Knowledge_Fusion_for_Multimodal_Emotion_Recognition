@@ -52,7 +52,7 @@ bert_config = BertConfig(
 )
 AE_layers, AE_blk_num, AE_input_dim=[512,256,256],5,1024
 
-roberta_path='../roberta-large-uncased'
+roberta_path=pretrained_root/'roberta-large-uncased'
 
 # Define temperature model
 

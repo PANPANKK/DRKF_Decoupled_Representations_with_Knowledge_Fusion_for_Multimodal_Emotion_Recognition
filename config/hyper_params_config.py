@@ -16,3 +16,12 @@ num_labels = 4
 batch_size=4
 #bert hidden_size
 hidden_size=1024
+
+
+from pathlib import Path
+#dataset_root
+dataset_root=Path("path/to/dataset")
+proj_dir= Path(__file__).parent.parent
+
+#pretrained_root
+pretrained_root = proj_dir/'pretrained'

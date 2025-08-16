@@ -9,6 +9,7 @@ import torchaudio
 import numpy as np
 import os
 import random
+from config.hyper_params_config import dataset_root, pretrained_root
 
 
 class IEMOCAPDataset(Dataset):
@@ -188,15 +189,17 @@ def audio_processor(x: np.ndarray, sampling_rate: int) -> np.ndarray:
 
 # if __name__ =='__main__':
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model_name = '../wav2vec2-large-uncased'
+model_name = pretrained_root/'wav2vec2-large-uncased'
 processor = Wav2Vec2Processor.from_pretrained(model_name)
 audio_model = EmotionModel.from_pretrained(model_name).to(device)
 # 处理并保存训练数据和验证数据
 session_id=1
-train_data_list_path = f'../dataset_session{session_id}/train_data.txt'
-val_data_list_path = f'../dataset_session{session_id}/test_data.txt'
-iemocap_aug_datapath = '/home/wangchai/SpeechEmotion/FUXIAN_MMER2023/MMER-main/data/iemocap_aug/out/'
-# 设置最大音频长度 25 秒
+train_data_list_path = dataset_root/f'dataset_session{session_id}/train_data.txt'
+val_data_list_path = dataset_root/f'dataset_session{session_id}/test_data.txt'
+# iemocap_aug_datapath = dataset_root/'MMER-main/data/iemocap_aug/out/'# it's no use in main experiment
+
+# uncomment if you want to process audio file
+# 设置最大音频长度 25 秒 
 # process_and_save_dataset(train_data_list_path, iemocap_aug_datapath, f'train_features_session{session_id}.pkl', max_duration=25)
 # process_and_save_dataset(val_data_list_path, iemocap_aug_datapath, f'val_features_session{session_id}.pkl', max_duration=25)
 print("pre_processor finished")
