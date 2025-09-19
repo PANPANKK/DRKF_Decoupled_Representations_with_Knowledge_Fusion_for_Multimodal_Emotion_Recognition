@@ -6,7 +6,7 @@ This paper has been accepted for publication at the 33rd ACM International Confe
 ![MM25](https://img.shields.io/badge/ACMMM'25-Oral-9cf)
 
 > Official PyTorch implementation of **DRKF** (ACM MM 2025 Oral).  
-> Achieves SOTA on IEMOCAP, MELD, and MSED datasets for multimodal emotion recognition.
+> Achieves SOTA on IEMOCAP, MELD, and M3ED datasets for multimodal emotion recognition.
 
 ---
 
@@ -22,7 +22,7 @@ This paper has been accepted for publication at the 33rd ACM International Confe
 |----------|-----------|---------|--------|-------------|
 | IEMOCAP  | 80.7/79.9 | -       | 80.3   | +2.55%      |
 | MELD     | 66.7      | 65.4    | 66.0   | +0.60%      |
-| MSED     | 50.6      | 52.0    | 51.7   | +4.02%      |
+| M3ED     | 50.6      | 52.0    | 51.7   | +4.02%      |
 
 ![Framework]<img src="./imgs/DRKF.png" />
 *Figure: DRKF Architecture (Sec 3.2)*
